@@ -1,0 +1,840 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "4D EMR Public Api",
+    "description": "version: 65.0.0.775df995d"
+  },
+  "host": "localhost",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/public/anesthesiagroups": {
+      "get": {
+        "tags": [
+          "AnesthesiaGroups"
+        ],
+        "operationId": "AnesthesiaGroups",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "facilitiLocationId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IdNameVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/anesthesiatypes": {
+      "get": {
+        "tags": [
+          "AnesthesiaTypes"
+        ],
+        "operationId": "AnesthesiaTypes",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AnesthesiaTypeVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/discountreasons": {
+      "get": {
+        "tags": [
+          "DiscountReasons"
+        ],
+        "operationId": "DiscountReasons",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IdNameVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/durations": {
+      "get": {
+        "tags": [
+          "Durations"
+        ],
+        "operationId": "Durations",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DurationVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/quotes/list": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "operationId": "Quotes List",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceQuoteListVM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/quotes": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "operationId": "Quote Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "quoteId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PriceQuoteVM"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Quotes"
+        ],
+        "operationId": "Quote Save",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdatePriceQuoteVM"
+            }
+          },
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PriceQuoteVM"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Quotes"
+        ],
+        "operationId": "Quote Delete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "quoteId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "client-id",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client-secret",
+            "in": "header",
+            "description": "This value is specific to the practice and can be found in the Stage4MD program in the Practice > Integrations section.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "IdNameVM": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "AnesthesiaTypeVM": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "DurationVM": {
+      "type": "object",
+      "properties": {
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DisplayText": {
+          "type": "string"
+        }
+      }
+    },
+    "PriceQuoteListVM": {
+      "type": "object",
+      "properties": {
+        "ExternalId": {
+          "type": "string"
+        },
+        "PriceQuoteId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PriceQuoteNo": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Version": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProcedureDescription": {
+          "type": "string"
+        },
+        "ModifiedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "PriceQuoteStatus": {
+          "$ref": "#/definitions/IdNameVM"
+        }
+      }
+    },
+    "PriceQuoteVM": {
+      "required": [
+        "Patient",
+        "Provider",
+        "TotalAmt",
+        "Duration"
+      ],
+      "type": "object",
+      "properties": {
+        "PriceQuoteNo": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Version": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreatedBy": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Discount": {
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountReason": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "PriceQuoteStatus": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "IsPaidInFull": {
+          "type": "boolean"
+        },
+        "AllSupplyItemsAvailable": {
+          "type": "boolean"
+        },
+        "HideItemPricing": {
+          "type": "boolean"
+        },
+        "ShowSummaryLine": {
+          "type": "boolean"
+        },
+        "ShowDepositAmount": {
+          "type": "boolean"
+        },
+        "ShowItemizedPayable": {
+          "type": "boolean"
+        },
+        "OfficePayableAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "DisplayFacilityAnesthIfZero": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DisplayConsultationCreditIfZero": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "OfficePayTo": {
+          "type": "string"
+        },
+        "FacilityPayTo": {
+          "type": "string"
+        },
+        "AnesthPayTo": {
+          "type": "string"
+        },
+        "AnesthesiaPayable": {
+          "format": "double",
+          "type": "number"
+        },
+        "FacilityPayable": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsSigned": {
+          "type": "boolean"
+        },
+        "DocumentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsAnesthAmtSetManually": {
+          "type": "boolean"
+        },
+        "IsFacilityAmtSetManually": {
+          "type": "boolean"
+        },
+        "IsDurationMinSetManually": {
+          "type": "boolean"
+        },
+        "ModifiedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "PriceQuoteDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ExternalId": {
+          "description": "Identifier for use by external systems.",
+          "type": "string"
+        },
+        "PriceQuoteId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Patient": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "Provider": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "TotalAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "Duration": {
+          "$ref": "#/definitions/DurationVM"
+        },
+        "ProcedureDescription": {
+          "type": "string"
+        },
+        "FacilityLocation": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "AnesthesiaType": {
+          "$ref": "#/definitions/AnesthesiaTypeVM"
+        },
+        "CreditAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "AnesthAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "FacilityAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "Template": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "AnesthesiaGroup": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "DepositPercent": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DepositAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "ExpirationDays": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Procedures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceQuoteProcedureVM"
+          }
+        },
+        "Supplies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceQuoteSupplyVM"
+          }
+        }
+      }
+    },
+    "PriceQuoteProcedureVM": {
+      "required": [
+        "ProcedureName",
+        "Amount"
+      ],
+      "type": "object",
+      "properties": {
+        "ProcedureName": {
+          "type": "string"
+        },
+        "Amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountReason": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "DiscountAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountPercent": {
+          "format": "double",
+          "type": "number"
+        },
+        "DurationMin": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ReportTag": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "ProviderProcedureId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "PriceQuoteSupplyVM": {
+      "required": [
+        "ItemTitle",
+        "UnitCost",
+        "Quantity"
+      ],
+      "type": "object",
+      "properties": {
+        "ShowOnQuote": {
+          "type": "boolean"
+        },
+        "IsToDoItem": {
+          "type": "boolean"
+        },
+        "CommissionAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "CommissionPercentage": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "WhenToAddPackageToPatientRegister": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaidToFacility": {
+          "type": "boolean"
+        },
+        "ItemTitle": {
+          "type": "string"
+        },
+        "UnitCost": {
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Inventory": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "Tax": {
+          "format": "double",
+          "type": "number"
+        },
+        "CreditToStaffId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ConfirmedAvailable": {
+          "type": "boolean"
+        },
+        "Package": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "ReportTag": {
+          "$ref": "#/definitions/IdNameVM"
+        }
+      }
+    },
+    "UpdatePriceQuoteVM": {
+      "required": [
+        "Patient",
+        "Provider",
+        "TotalAmt",
+        "Duration"
+      ],
+      "type": "object",
+      "properties": {
+        "ExternalId": {
+          "description": "Identifier for use by external systems.",
+          "type": "string"
+        },
+        "PriceQuoteId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Patient": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "Provider": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "TotalAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "Duration": {
+          "$ref": "#/definitions/DurationVM"
+        },
+        "ProcedureDescription": {
+          "type": "string"
+        },
+        "FacilityLocation": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "AnesthesiaType": {
+          "$ref": "#/definitions/AnesthesiaTypeVM"
+        },
+        "CreditAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "AnesthAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "FacilityAmt": {
+          "format": "double",
+          "type": "number"
+        },
+        "Template": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "AnesthesiaGroup": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "DepositPercent": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DepositAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "ExpirationDays": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Procedures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceQuoteProcedureVM"
+          }
+        },
+        "Supplies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UpdatePriceQuoteSupplyVM"
+          }
+        }
+      }
+    },
+    "UpdatePriceQuoteSupplyVM": {
+      "required": [
+        "ItemTitle",
+        "UnitCost",
+        "Quantity"
+      ],
+      "type": "object",
+      "properties": {
+        "ItemTitle": {
+          "type": "string"
+        },
+        "UnitCost": {
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Inventory": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "Tax": {
+          "format": "double",
+          "type": "number"
+        },
+        "CreditToStaffId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ConfirmedAvailable": {
+          "type": "boolean"
+        },
+        "Package": {
+          "$ref": "#/definitions/IdNameVM"
+        },
+        "ReportTag": {
+          "$ref": "#/definitions/IdNameVM"
+        }
+      }
+    }
+  }
+}
